@@ -4,11 +4,9 @@ Hoje em dia, é cada vez mais comum utilizar serviços de DNS dinâmico para ace
 
 - **Segurança:** Com seu IP e porta exposto na Internet, você está sujeito a invasões, ataques DDoS, rastreamento das suas atividades e vários outros riscos;
 - **Vulnerabilidades:** Se houver vulnerabilidades conhecidas em seus dispositivos, os invasores podem explorá-las para acessar sua rede e dispositivos;
-- **Monitoramento:** Se você estiver usando algum serviço de DNS dinâmico para acessar dispositivos com câmeras, é importante ter em mente que as imagens e vídeos podem ser acessados por terceiros sem o seu conhecimento;
+- **Monitoramento:** Se você estiver usando para acessar dispositivos com câmeras, é importante ter em mente que as imagens e vídeos podem ser acessados por terceiros sem o seu conhecimento;
 
-Neste guia, vou te mostrar como fazer a configuração do seu próprio serviço de DNS dinâmico no Windows, utilizando formas de proteção mais seguras e realizando a conexão via HTTPS, com um certificado válido. Como você estará se expondo a internet, é importante lembrar que nunca há uma garantia total de segurança. Recomendo sempre manter seus sistemas e aplicativos atualizados e monitorar regularmente as atividades de rede para detectar qualquer atividade suspeita.
-
-Vamos utilizar um domínio próprio, o serviço da Cloudflare e o Caddy.
+Neste guia, vou te mostrar como fazer a configuração do seu próprio serviço de DNS dinâmico no Windows, utilizando formas de proteção mais seguras e realizando a conexão via HTTPS com um certificado válido. Vamos utilizar um domínio próprio, o serviço da Cloudflare e o Caddy.
 
 ### Domínio
 
@@ -270,7 +268,7 @@ Com isso, o seu IP será atualizado na Cloudflare a cada 3 minutos de forma auto
 
 ## Finalizando
 
-Depois de tudo configurado, você agora possui um servidor com suporte ao HTTPS, usando criptografia de ponta a ponta para proteger as informações transmitidas, e uma defesa robusta, possuindo diversas camadas de proteção contra ataques de negação de serviço (DDoS), injeção de SQL, cross-site scripting (XSS) e outras ameaças comuns.
+Depois de tudo configurado, você agora possui um servidor com suporte ao HTTPS, usando criptografia de ponta a ponta para proteger as informações transmitidas, e uma defesa robusta, possuindo diversas camadas de proteção contra ataques de negação de serviço (DDoS), injeção de SQL, cross-site scripting (XSS) e outras ameaças comuns. Mas como você estará se expondo a internet, é importante lembrar que nunca há uma garantia total de segurança. Recomendo sempre manter seus sistemas e aplicativos atualizados e monitorar regularmente as atividades de rede para detectar qualquer atividade suspeita.
 
 Para configurar algum serviço no Caddy é bem simples, bastando adicionar algumas linhas ao arquivo "**caddyfile**". Vou usar de exemplo a configuração do "**Nextcloud**" e do monitoramento das câmeras de segurança:
 
