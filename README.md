@@ -1,4 +1,4 @@
-# Configurando um servidor local seguro com o Caddy e Cloudflare
+# Configurando um servidor local seguro com o Cloudflare e Caddy
 
 Hoje em dia, é cada vez mais comum utilizar serviços de DNS dinâmico para acessar dispositivos na rede local. Esses serviços permitem que os usuários criem nomes de domínio personalizados para acessar seus dispositivos em casa, como computadores, servidores e câmeras, usando um endereço de IP dinâmico. Isso pode ser muito útil para acessar seus arquivos, servidor web e monitorar suas câmeras, no entanto, é importante estar ciente dos riscos associados ao uso desses serviços:
 
