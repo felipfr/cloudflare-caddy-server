@@ -3,7 +3,7 @@
 Hoje em dia, é cada vez mais comum utilizar serviços de DNS dinâmico para acessar dispositivos na rede local. Esses serviços permitem que os usuários criem nomes de domínio personalizados para acessar seus dispositivos em casa, como computadores, servidores e câmeras, usando um endereço de IP dinâmico. Isso pode ser muito útil para acessar seus arquivos, servidor web e monitorar suas câmeras, no entanto, é importante estar ciente dos riscos associados ao uso desses serviços:
 
 - **Segurança:** Com seu IP e porta exposto na Internet, você está sujeito a invasões, ataques DDoS, rastreamento das suas atividades e vários outros riscos;
-- **Vulnerabilidades:** Se houver vulnerabilidades conhecidas em seus dispositivos, os invasores podem explorá-las para acessar sua rede e dispositivos;
+- **Vulnerabilidades:** Se houver alguma vulnerabilidade, os invasores podem explorá-las para acessar sua rede e dispositivos;
 - **Monitoramento:** Se você estiver usando para acessar dispositivos com câmeras, é importante ter em mente que as imagens e vídeos podem ser acessados por terceiros sem o seu conhecimento;
 
 Neste guia, vou te mostrar como fazer a configuração do seu próprio serviço de DNS dinâmico no Windows, utilizando formas de proteção mais seguras e realizando a conexão via HTTPS com um certificado válido. Vamos utilizar um domínio próprio, o serviço da Cloudflare e o Caddy.
@@ -14,11 +14,11 @@ Como não iremos depender do serviço de DNS de terceiros, você precisará regi
 
 ### Cloudflare
 
-A Cloudflare é uma Content Delivery Network (CDN), oferecendo um melhor desempenho e velocidade, porém o que mais nos interessa são as diversas medidas de segurança, como proteção DDoS, detecção de malware, bloqueio de IP's suspeitos, o que ajuda a proteger o seu servidor de ataques externos.
+A Cloudflare é uma [Content Delivery Network (CDN)](https://www.cloudflare.com/pt-br/learning/cdn/what-is-a-cdn/), oferecendo um melhor desempenho e velocidade, porém o que mais nos interessa são as diversas medidas de segurança, como proteção DDoS, detecção de malware, bloqueio de IP's suspeitos, o que ajuda a proteger o seu servidor de ataques externos.
 
 ### Caddy
 
-O Caddy é um servidor web de código aberto escrito em Go. Ele é conhecido por sua configuração simples e automatização de tarefas comuns, como configuração de SSL e redirecionamentos. Iremos configurá-lo como um proxy reverso, o que significa que ele poderá encaminhar solicitações de clientes para outros servidores. Isso é útil quando você tem várias aplicações em diferentes portas e deseja utilizá-las em um único endereço. Outra vantagem é não precisar ficar redirecionando portas no roteador a cada serviço utilizado, já que o Caddy recebe as solicitações pela Internet e faz o redirecionamento para as portas na rede local.
+O Caddy é um servidor web de código aberto escrito na linguagem [Go](https://pt.wikipedia.org/wiki/Go_(linguagem_de_programa%C3%A7%C3%A3o)). Ele é conhecido por sua configuração simples e automatização de tarefas comuns, como configuração de SSL e redirecionamentos. Iremos configurá-lo como um proxy reverso, o que significa que ele poderá encaminhar solicitações de clientes para outros servidores. Isso é útil quando você tem várias aplicações em diferentes portas e deseja utilizá-las em um único endereço. Outra vantagem é não precisar ficar redirecionando portas no roteador a cada serviço utilizado, já que o Caddy recebe as solicitações pela Internet e faz o redirecionamento para as portas na rede local.
 
 ## Configurando o domínio na Cloudflare
 
@@ -268,7 +268,7 @@ Com isso, o seu IP será atualizado na Cloudflare a cada 3 minutos de forma auto
 
 ## Finalizando
 
-Depois de tudo configurado, você agora possui um servidor com suporte ao HTTPS, usando criptografia de ponta a ponta para proteger as informações transmitidas, e uma defesa robusta, possuindo diversas camadas de proteção contra ataques de negação de serviço (DDoS), injeção de SQL, cross-site scripting (XSS) e outras ameaças comuns. Mas como você estará se expondo a internet, é importante lembrar que nunca há uma garantia total de segurança. Recomendo sempre manter seus sistemas e aplicativos atualizados e monitorar regularmente as atividades de rede para detectar qualquer atividade suspeita.
+Depois de tudo configurado, você agora possui um servidor com suporte ao HTTPS, usando criptografia de ponta a ponta para proteger as informações transmitidas, e uma defesa robusta, possuindo diversas camadas de proteção contra ataques de negação de serviço (DDoS), injeção de SQL, cross-site scripting (XSS) e outras ameaças comuns. Mas como você estará exposto a Internet, é importante lembrar que nunca há uma garantia total de segurança. Recomendo sempre manter seus sistemas e aplicativos atualizados e monitorar regularmente as atividades de rede para detectar qualquer atividade suspeita.
 
 Para configurar algum serviço no Caddy é bem simples, bastando adicionar algumas linhas ao arquivo "**caddyfile**". Vou usar de exemplo a configuração do "**Nextcloud**" e do monitoramento das câmeras de segurança:
 
