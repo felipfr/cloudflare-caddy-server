@@ -12,7 +12,7 @@ Vamos utilizar um domínio próprio, o serviço da Cloudflare e o Caddy.
 
 ### Domínio
 
-Como não iremos depender do serviço de DNS de terceiros, você precisará registrar um domínio próprio. Existem vários tipos de domínio, com todos os tipos de preços, pagos anualmente. Recomendo o [Google Domains](https://domains.google) .
+Como não iremos depender do serviço de DNS de terceiros, você precisará registrar um domínio próprio. Existem vários tipos de domínio, com todos os tipos de preços, pagos anualmente. Recomendo o [Google Domains](https://domains.google).
 
 ### Cloudflare
 
